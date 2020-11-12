@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import SavedBooks from "./pages/SavedBooks";
-import Books from "./pages/Books";
+import SavedBooks from "./pages/savedBooks";
+import Books from "./pages/books";
 import Nav from "./components/Nav/index";
 import "./App.css";
 
