@@ -7,6 +7,9 @@ import axios from "axios";
 import { Col, Row, Container } from "../components/Grid";
 
 function Books() {
+  const [books, setBooks] = useState("");
+  const [result, setResult] = useState([]);
+
   return (
     <Container fluid>
       <p> This is Books Page</p>
