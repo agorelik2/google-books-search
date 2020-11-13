@@ -15,10 +15,10 @@ app.use(express.json());
 // Serve up static assets (usually on heroku)
 //comment this out to launch
 
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// }
-app.use(express.static("public"));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+//app.use(express.static("public"));
 
 //this will be part of the code that we leave in to deploy on heroku
 //app.use(express.static("client/build"));
@@ -27,8 +27,13 @@ app.use(express.static("public"));
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gbooks");
-
+//mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gbooks");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gbooks", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
 // mongoose.connect(process.env.MONGODB_URI || `mongodb://${dbuser}:${dbpassword}@ds..../heroku_....`);
 
 // Start the API server
