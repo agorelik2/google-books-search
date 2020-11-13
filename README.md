@@ -34,7 +34,7 @@ As a user, I want to be able to search books on Google and save my favorite sear
 
 ## Functionality
 
-1. Started by creating full stack structure for MERN app with REACT being a client. Used `npx create-react-app` to create REACT app in the client folder
+1. Started by creating full stack structure for MERN app with REACT being a client. Used `npx create-react-app` to create REACT app in the `client` folder
 
 2. On the clent side, created 2 pages (books.js and savedBooks.js) in client/src/pages
 
@@ -84,9 +84,9 @@ The second screen shows saved books and allows user to find the book on google b
 For this application, I have created React components, worked with helper/util functions, and utilized React lifecycle methods to query and display books based on user searches. I have also used Node, Express and MongoDB so that users can save books in MongoDB (gbooks) and return to buy the books later.
 I have built back-end utilizing three different routes:
 
-1. read all the books,
-2. save the book
-3. delete the book
+1. read all the books stored routes/api/books --> get
+2. save a book routes/api/books --> post
+3. delete a book routes/api/books/:id
 
 ## Installation
 
@@ -128,9 +128,9 @@ To use this application locally:
 - [node.js](https://nodejs.org/en/)
 - [express.js](https://expressjs.com/)
 - [react.js](https://reactjs.org/)
-- [MongoDB][https://www.mongodb.com/]
-- [mongoose][https://mongoosejs.com/]
-- [heroku][https://dashboard.heroku.com/apps]
+- [MongoDB](https://www.mongodb.com/)
+- [mongoose](https://mongoosejs.com/)
+- [heroku](https://dashboard.heroku.com/apps)
 
 ## Repo:
 
