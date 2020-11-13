@@ -29,7 +29,7 @@ function SavedBooks() {
 
   return (
     <div>
-      <Jumbotron className="fluid">
+      <Jumbotron className="search-header">
         <Container fluid>
           <Col>
             <h1>My Favorite Books</h1>

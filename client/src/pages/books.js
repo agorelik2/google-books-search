@@ -54,7 +54,7 @@ function Books() {
             name="title"
             placeholder="Title (required)"
           />
-          <FormBtn onClick={handleSubmit}>Submit Book</FormBtn>
+          <FormBtn onClick={handleSubmit}>Search Book</FormBtn>
           {result.length ? (
             <List>
               {result.map((book, index) => {
