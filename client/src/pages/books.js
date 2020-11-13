@@ -5,6 +5,7 @@ import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
 import axios from "axios";
 import { Col, Row, Container } from "../components/Grid";
+import { SaveBtn } from "../components/Button";
 
 function Books() {
   const [books, setBooks] = useState("");
@@ -41,11 +42,25 @@ function Books() {
     searchGoogleBooks();
   }
 
+  function handleBookSave(index) {
+    console.log(index);
+    console.log(result[index].id);
+    console.log(result[index]);
+    API.saveBook({
+      googleId: result[index].id,
+      image: result[index].volumeInfo.imageLinks.thumbnail,
+      title: result[index].volumeInfo.title,
+      authors: result[index].volumeInfo.authors,
+      description: result[index].volumeInfo.description,
+      link: result[index].volumeInfo.previewLink,
+    }).catch((err) => console.log(err));
+  }
+
   return (
     <Container fluid>
       <Row>
-        <Col size="md-6">
-          <Jumbotron>
+        <Col size="md-10">
+          <Jumbotron className="jumbtop">
             <h1 className="search-header">Google Book Search</h1>
           </Jumbotron>
           <Input
@@ -61,14 +76,13 @@ function Books() {
                 console.log(JSON.stringify(book, null, 2));
                 return (
                   <ListItem key={book.id}>
-                    <a href={"/books/" + book.id}>
-                      <div className="book-title">
-                        <strong>
-                          {book.volumeInfo.title} by {book.volumeInfo.authors}
-                        </strong>
-                      </div>
-                      <p>{book.volumeInfo.description}</p>
-                    </a>
+                    <div className="book-title">
+                      <strong>
+                        {book.volumeInfo.title} by {book.volumeInfo.authors}
+                      </strong>
+                    </div>
+                    <br></br>
+
                     <a href={book.volumeInfo.previewLink}>
                       <img
                         src={
@@ -79,13 +93,14 @@ function Books() {
                         alt={book.volumeInfo.title}
                       />
                     </a>
-                    <button
-                      //onClick={() => handleBookSave(index)}
+                    <p>{book.volumeInfo.description}</p>
+                    <SaveBtn
+                      onClick={() => handleBookSave(index)}
                       className="btn"
                     >
                       {" "}
-                      Save Book to List
-                    </button>
+                      Save to Favorites
+                    </SaveBtn>
                   </ListItem>
                 );
               })}

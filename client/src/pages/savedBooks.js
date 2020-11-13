@@ -3,9 +3,7 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { List, ListItem } from "../components/List";
 import DeleteBtn from "../components/DeleteBtn";
-import { Container, Row, Col } from "reactstrap";
-
-import "./style.css";
+import { Col, Row, Container } from "../components/Grid";
 
 function SavedBooks() {
   const [savedBooks, setSavedBooks] = useState([]);
@@ -28,23 +26,26 @@ function SavedBooks() {
   }
 
   return (
-    <div>
-      <Jumbotron className="search-header">
-        <Container fluid>
-          <Col>
+    <Container fluid>
+      <Row>
+        <Col size="md-10">
+          <Jumbotron className="fluid jumbtop">
             <h1>My Favorite Books</h1>
-          </Col>
-        </Container>
-      </Jumbotron>
-      <br></br>
-      <br></br>
-      <Container fluid id="resultsdiv">
-        <h2>List</h2>
-        <Row>
+          </Jumbotron>
+          <br></br>
+          <br></br>
+
           {savedBooks.length ? (
             <List>
               {savedBooks.map((savedBook) => (
                 <ListItem key={savedBook._id}>
+                  <strong className="saved-book">
+                    {savedBook.title + "   "}
+                    by
+                    {"   " + savedBook.authors}
+                  </strong>
+                  <br></br>
+                  <br></br>
                   <a href={savedBook.link}>
                     <img
                       src={
@@ -57,12 +58,6 @@ function SavedBooks() {
                     />
                   </a>
 
-                  <strong className="saved-book">
-                    {savedBook.title + "   "}
-                    by
-                    {"   " + savedBook.authors}
-                  </strong>
-
                   <p className="book-description">{savedBook.description}</p>
 
                   <DeleteBtn onClick={() => deleteBook(savedBook._id)} />
@@ -72,9 +67,9 @@ function SavedBooks() {
           ) : (
             <h2>No Books to Display</h2>
           )}
-        </Row>
-      </Container>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 export default SavedBooks;

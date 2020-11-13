@@ -2,37 +2,65 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+* {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: "Raleway", sans-serif;
+  font-size: 12pt;
 }
 
-.App-link {
-  color: #61dafb;
+/* .search-header {
+  font-size: 48pt;
+  color: #287069;
+  background-color: #35E9F0;
+} */
+
+.jumbotron {
+  /* padding: 5em inherit; */
+  background-color: #d6ffff;
+  /* height:100vh; */
+  /* justify-content: center; */
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn {
+  background-color: #1d7299;
+}
+
+.book-description {
+  background-color: white;
+  float: right;
+}
+
+.book-title {
+  background-color: white;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+.jumbtop {
+  background-image: url("./components/Img/download.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  padding: 0rem 0rem;
+}
+
+.search-header {
+  font-size: 30pt;
+  color: #1d2124;
 }
