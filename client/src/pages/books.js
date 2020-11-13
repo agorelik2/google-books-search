@@ -10,8 +10,8 @@ import { SaveBtn } from "../components/Button";
 function Books() {
   const [books, setBooks] = useState("");
   const [result, setResult] = useState([]);
-  //const apiKey = process.env.REACT_APP_API_KEY;
-  const apiKey = "AIzaSyBT2wxHdikLLSHbqf_UqgH33CI5XJd4EpI";
+  const apiKey = process.env.REACT_APP_API_KEY;
+  //const apiKey = "AIzaSyBT2wxHdikLLSHbqf_UqgH33CI5XJd4EpI";
 
   //handle change when search term is entered
   function handleChange(event) {
