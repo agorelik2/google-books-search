@@ -42,7 +42,7 @@ As a user, I want to be able to search books on Google and save my favorite sear
 
 4. Added code to connect to a MongoDB database named `gbooks` using the mongoose npm package.
 
-5. Using mongoose, then created a Book schema.
+5. Using mongoose, created a Book schema.
 
 6. Books schema has the following fields:
 
