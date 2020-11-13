@@ -1,0 +1,10 @@
+* {
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 12pt;
+}
+
+.search-header {
+  font-size: 30pt;
+  color: rgb(36, 29, 129);
+}
